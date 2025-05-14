@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Star</title>
+  <!-- Import fonts for styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* General body styling */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Heading style with entrance animation */
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Paragraph styling */
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 1rem;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    /* Enter button styling with hover and animation */
+    .enter-btn {
+      margin-top: 3rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid #fff;
+      color: #fff;
+      border-radius: 50px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      animation: pulse 2s infinite;
+      transition: background 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Music toggle button in top right corner */
+    .music-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* Keyframe for fading in elements */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Keyframe for pulsing effect */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* Loading screen styles */
+    #loading-screen {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: black;
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      animation: fadeOut 2s ease 3s forwards;
+    }
+
+    /* Keyframe to fade out loading screen */
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    /* Animated glowing name effect */
+    .glow-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #0ff;
+      animation: textAppear 2s ease-out 3s forwards;
+      opacity: 0;
+    }
+
+    /* Animation for glowing name to appear */
+    @keyframes textAppear {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading screen content -->
+  <div id="loading-screen">
+    <p>Warming the candles...</p>
+    <p>Polishing the stars...</p>
+    <p>Preparing your celebration...</p>
+  </div>
+
+  <!-- Music toggle button -->
+  <button class="music-toggle" onclick="toggleMusic()">🔈 Toggle Music</button>
+
+  <!-- Glowing name heading -->
+  <h1 class="glow-text">It's 15th May again</h1>
+  <p>Over two decades from that first cry. <br> Welcome to your celebration.</p>
+
+  <!-- Main button to enter site -->
+  <button class="enter-btn" onclick="location.href='page2.html'">Enter the Celebration</button>
+
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="praise #1.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    const music = document.getElementById('bg-music');
+
+    // Toggle music on button click
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+
+    // Autoplay music after short delay
+    setTimeout(() => music.play().catch(() => {}), 1500);
+
+    // Hide loading screen after delay
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loading-screen');
+        loader.style.display = 'none';
+      }, 4000); // Slightly longer than animation for smooth transition
+    });
+  </script>
+</body>
+</html>
