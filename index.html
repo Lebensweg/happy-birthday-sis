@@ -6,7 +6,7 @@
   <title>Birthday Star</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    /body {
+    body {
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -107,7 +107,7 @@
     @keyframes textAppear {
       from { opacity: 0; transform: scale(0.8); }
       to { opacity: 1; transform: scale(1); }
-          }/
+    }
   </style>
 </head>
 <body>
@@ -155,14 +155,12 @@
 
     // Handle site entrance
     function enterSite() {
-      // Attempt to play music first
       music.play().catch(err => {
         console.warn('Autoplay failed:', err);
       }).finally(() => {
-        // Then navigate
         window.location.href = 'page2.html';
       });
     }
   </script>
 </body>
-  </html>
+</html>
