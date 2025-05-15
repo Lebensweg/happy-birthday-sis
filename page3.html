@@ -42,18 +42,20 @@
   height: 100vh;
   align-items: center;
   padding: 0 2rem;
+  scroll-behavior: smooth;
 }
-
 .gallery-image {
   flex: 0 0 auto;
   scroll-snap-align: center;
   width: 80vw;
+  height: 80vh; /* ✅ Ensures vertical sizing */
   max-width: 600px;
+  max-height: 90vh; /* ✅ Prevents overflow on small screens */
   margin: 0 1rem;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   transition: transform 0.3s ease;
-  object-fit: cover;
+  object-fit: cover; /* ✅ Ensures the image fills the container */
 }
 
 .gallery-image:hover {
