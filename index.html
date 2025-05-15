@@ -148,6 +148,17 @@
   <script>
     const music = document.getElementById('bg-music');
 
+        function enterSite() {
+  const music = document.getElementById('bg-music');
+  music.play().then(() => {
+    window.location.href = 'page2.html';
+  }).catch(() => {
+    // Fallback in case user blocks sound
+    window.location.href = 'page2.html';
+  });
+}
+<button class="enter-btn" onclick="enterSite()">Enter the Celebration</button>
+    
     // Toggle music on button click
     function toggleMusic() {
       if (music.paused) {
@@ -156,8 +167,6 @@
         music.pause();
       }
     }
-    
-<button class="enter-btn" onclick="enterSite()">Enter the Celebration</button>
 
     // Hide loading screen after delay
     window.addEventListener('load', () => {
