@@ -141,22 +141,14 @@
   <button class="enter-btn" onclick="location.href='page2.html'">Enter the Celebration</button>
 
   <!-- Background music -->
-  <audio id="bg-music" autoplay loop preload="auto">
-    <source src="praise1.mp3" type="audio/mp3">
-  </audio>
+<audio id="bg-music" loop preload="auto">
+  <source src="praise1.mp3" type="audio/mp3">
+</audio>
 
-  <script>
-    const music = document.getElementById('bg-music');
+<!-- Music toggle button -->
+<button class="music-toggle" onclick="toggleMusic()">🔈 Toggle Music</button>
 
-        function enterSite() {
-  const music = document.getElementById('bg-music');
-  music.play().then(() => {
-    window.location.href = 'page2.html';
-  }).catch(() => {
-    // Fallback in case user blocks sound
-    window.location.href = 'page2.html';
-  });
-}
+<!-- Enter button -->
 <button class="enter-btn" onclick="enterSite()">Enter the Celebration</button>
     
     // Toggle music on button click
@@ -174,7 +166,28 @@
         const loader = document.getElementById('loading-screen');
         loader.style.display = 'none';
       }, 4000); // Slightly longer than animation for smooth transition
+    }
+  <script>
+  const music = document.getElementById('bg-music');
+
+  // Handle entering the site and playing music
+  function enterSite() {
+    music.play().then(() => {
+      window.location.href = 'page2.html';
+    }).catch((err) => {
+      console.warn('Autoplay failed. User must interact first:', err);
+      window.location.href = 'page2.html'; // Proceed even if audio fails
     });
+  }
+
+  // Toggle music on/off
+  function toggleMusic() {
+    if (music.paused) {
+      music.play().catch((err) => console.warn('Play failed:', err));
+    } else {
+      music.pause();
+    }
+  }
   </script>
 </body>
 </html>
