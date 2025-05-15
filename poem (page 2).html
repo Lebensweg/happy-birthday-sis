@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Star Among Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 30, 0.85), rgba(0, 0, 30, 0.85)),
+                  url('poem background') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Merriweather', serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #fbdada;
+    }
+
+    .poem-container {
+      max-width: 850px;
+      background-color: rgba(255, 255, 255, 0.07);
+      padding: 2rem 2.5rem;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      margin: 1rem;
+    }
+
+    .poem {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .next-btn {
+      margin-top: 2.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid #fff;
+      color: #fff;
+      border-radius: 50px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: background 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <!-- Background music that plays automatically and loops -->
+  <audio src="praise #2.mp3" autoplay loop></audio>
+
+  <h1>A Star Among Us</h1>
+
+  <div class="poem-container">
+    <div class="poem">
+      She walks not on clouds, but the clouds still part,<br>
+      For a girl who wore storms on her hopeful heart.<br>
+      Life threw its punches — she laughed and took more,<br>
+      Smiling through pain that most would abhor.<br><br>
+
+      She’s chaos in slippers, a whirlwind in bloom,<br>
+      The kind to throw pillows or dance through a room.<br>
+      Random pinches, surprise attacks with delight —<br>
+      A quirky madcap with warmth as her light.<br><br>
+
+      She never had ease, but still she gave grace,<br>
+      Lighting the dark with that radiant face.<br>
+      Yet tides now are turning, the stars realign —<br>
+      The world’s giving back what was always hers by design.<br><br>
+
+      So raise up your glasses, let joy overflow,<br>
+      For the sister who shines with an untamed glow.<br>
+      A crown she denies, but deep down we see:<br>
+      She’s magic and marvel — and weird royalty.
+    </div>
+  </div>
+
+  <button class="next-btn" onclick="location.href='page3.html'">Continue</button>
+</body>
+</html>

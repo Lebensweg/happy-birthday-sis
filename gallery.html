@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en">	
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery of Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }body {
+  height: 100vh;
+  background: linear-gradient(rgba(10, 10, 30, 0.85), rgba(10, 10, 30, 0.85)),
+              url('https://i.imgur.com/tKeoFHu.jpg') no-repeat center center fixed; /* Background placeholder */
+  background-size: cover;
+  font-family: 'Merriweather', serif;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.audio-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem 0.7rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+.gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.gallery-image {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 80vw;
+  max-width: 600px;
+  margin: 0 1rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+}
+
+.next-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+.next-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <button class="audio-toggle" onclick="toggleAudio()">&#9835;</button>
+  <audio id="bg-music" src="gallery-music.mp3" autoplay loop></audio>  <div class="gallery-container">
+    <img src="gallery 1" class="gallery-image" alt="Gallery 1">
+    <img src="gallery 2" class="gallery-image" alt="Gallery 2">
+    <img src="gallery 3" class="gallery-image" alt="Gallery 3">
+    <img src="gallery 4" class="gallery-image" alt="Gallery 4">
+    <img src="gallery 5" class="gallery-image" alt="Gallery 5">
+    <img src="gallery 6" class="gallery-image" alt="Gallery 6">
+    <img src="gallery 7" class="gallery-image" alt="Gallery 7">
+    <img src="gallery 8" class="gallery-image" alt="Gallery 8">
+    <img src="gallery 9" class="gallery-image" alt="Gallery 9">
+    <img src="gallery 10" class="gallery-image" alt="Gallery 10">
+  </div><button class="next-btn" onclick="location.href='page4.html'">Next Page</button>
+
+  <script>
+    const music = document.getElementById('bg-music');
+    function toggleAudio() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script></body>
+</html>
